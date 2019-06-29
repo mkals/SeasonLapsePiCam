@@ -2,12 +2,13 @@ from picamera import PiCamera
 from time import sleep
 import os
 
-file_path = 'SeasonLapse/SeasonLapsePiCam/'
+file_path = 'SeasonLapsePiCam/'
 file_name = 'img.jpg'
 
 camera = PiCamera()
 #camera.resolution = (2592, 1944)
-camera.resolution = (460, 640)
+camera.resolution = (3280,2464)
+#camera.rotation = 90
 #camera.brightness = 70
 #camera.contrast = 50
 #camera.awb_mode = 'auto'
@@ -16,7 +17,7 @@ camera.resolution = (460, 640)
 def take_photo():
     #os.remove(file_path + file_name)
     camera.start_preview()
-    sleep(2)
+    sleep(1)
     camera.capture(file_path + file_name)
     camera.stop_preview()
 
