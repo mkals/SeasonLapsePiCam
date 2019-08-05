@@ -1,2 +1,0 @@
-screen -S imageServer
-sudo python3 main.py

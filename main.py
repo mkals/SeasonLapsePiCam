@@ -16,10 +16,14 @@ camera.resolution = (3280,2464)
 
 def take_photo():
     #os.remove(file_path + file_name)
-    camera.start_preview()
-    sleep(1)
-    camera.capture(file_path + file_name)
-    camera.stop_preview()
+    # camera.start_preview()
+    # sleep(1)
+    # camera.capture(file_path + file_name)
+    # camera.stop_preview()
+
+    os.system('fswebcam -r 4208x3120 -S 3 --jpeg 95 --save /home/pi/' + file_path + file_name) # uses Fswebcam to take picture
+    # os.system('fswebcam -r 4208x3120 -S 3 --jpeg 98 --save /home/pi/to_transmit/98-%H.%M.%S.jpg') # uses Fswebcam to take picture
+    # os.system('fswebcam -r 4208x3120 -S 3 --jpeg 100 --save /home/pi/to_transmit/100-%H.%M.%S.jpg') # uses Fswebcam to take picture
 
 ### Flask server
 
