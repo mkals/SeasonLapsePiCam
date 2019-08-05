@@ -5,22 +5,7 @@ import os
 file_path = 'SeasonLapsePiCam/'
 file_name = 'img.jpg'
 
-camera = PiCamera()
-#camera.resolution = (2592, 1944)
-camera.resolution = (3280,2464)
-#camera.rotation = 90
-#camera.brightness = 70
-#camera.contrast = 50
-#camera.awb_mode = 'auto'
-#camera.exposure_mode = 'auto'
-
 def take_photo():
-    #os.remove(file_path + file_name)
-    # camera.start_preview()
-    # sleep(1)
-    # camera.capture(file_path + file_name)
-    # camera.stop_preview()
-
     os.system('fswebcam -r 4208x3120 -S 3 --jpeg 95 --save /home/pi/' + file_path + file_name) # uses Fswebcam to take picture
     # os.system('fswebcam -r 4208x3120 -S 3 --jpeg 98 --save /home/pi/to_transmit/98-%H.%M.%S.jpg') # uses Fswebcam to take picture
     # os.system('fswebcam -r 4208x3120 -S 3 --jpeg 100 --save /home/pi/to_transmit/100-%H.%M.%S.jpg') # uses Fswebcam to take picture
